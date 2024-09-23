@@ -27,8 +27,31 @@ public class Jugador {
         this.puntuacion = puntuacion;
     }
 
-    public void darAlta(Jugador jugador){
-        
+    public boolean estaAlta(ArrayList<Jugador> jugadores, String nombre){
+        boolean encontrado = false;
+        for(Jugador jugador : jugadores){
+            if (jugador.getNombre().equals(nombre)) {
+                encontrado = true;
+            }
+        }
+        return encontrado;
     }
 
+    public void darAlta(Jugador jugador){
+        if (estaAlta(jugadores, jugador.getNombre())) {
+            System.out.println("No se puede dar de alta, ya eexiste un jugador con este nombre. ");
+        }else{
+            jugadores.add(jugador);
+            System.out.println("Jugador con nombre "+jugador.getNombre()+" dado de alta");
+        }
+    }
+
+    public void bajaJugador(Jugador jugador){
+        if (estaAlta(jugadores, jugador.getNombre())) {
+            jugadores.remove(jugador);
+            System.out.println("Jugador dado de baja correctamente. ");
+        }else{
+            System.out.println("El jugador no está dado de alta. ");
+        }
+    }
 }
