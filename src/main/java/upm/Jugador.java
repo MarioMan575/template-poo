@@ -1,5 +1,7 @@
 package upm;
 
+
+
 import java.util.ArrayList;
 
 public class Jugador {
@@ -27,10 +29,10 @@ public class Jugador {
         this.puntuacion = puntuacion;
     }
 
-    public boolean estaAlta(ArrayList<Jugador> jugadores, String nombre){
+    public boolean estaAlta(String nombre){
         boolean encontrado = false;
-        for(Jugador jugador : jugadores){
-            if (jugador.getNombre().equals(nombre)) {
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (jugadores.get(i).getNombre().equalsIgnoreCase(nombre)) {
                 encontrado = true;
             }
         }
@@ -38,8 +40,8 @@ public class Jugador {
     }
 
     public void darAlta(Jugador jugador){
-        if (estaAlta(jugadores, jugador.getNombre())) {
-            System.out.println("No se puede dar de alta, ya eexiste un jugador con este nombre. ");
+        if (estaAlta(jugador.getNombre())) {
+            System.out.println("No se puede dar de alta, ya existe un jugador con este nombre. ");
         }else{
             jugadores.add(jugador);
             System.out.println("Jugador con nombre "+jugador.getNombre()+" dado de alta");
@@ -47,7 +49,7 @@ public class Jugador {
     }
 
     public void bajaJugador(Jugador jugador){
-        if (estaAlta(jugadores, jugador.getNombre())) {
+        if (estaAlta( jugador.getNombre())) {
             jugadores.remove(jugador);
             System.out.println("Jugador dado de baja correctamente. ");
         }else{
@@ -55,7 +57,7 @@ public class Jugador {
         }
     }
 
-    public void mostrarJugadores(ArrayList<Jugador> jugadores){
+    public void mostrarJugadores(){
         for (int i = 0; i < jugadores.size(); i++) {
             System.out.println(i+1+"."+jugadores.get(i).getNombre());
         }
