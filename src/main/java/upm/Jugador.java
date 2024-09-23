@@ -54,4 +54,10 @@ public class Jugador {
             System.out.println("El jugador no está dado de alta. ");
         }
     }
+
+    public void mostrarJugadores(ArrayList<Jugador> jugadores){
+        for (int i = 0; i < jugadores.size(); i++) {
+            System.out.println(i+1+"."+jugadores.get(i).getNombre());
+        }
+    }
 }
