@@ -1,12 +1,16 @@
 package upm;
 
+import java.util.ArrayList;
+
 public class Jugador {
 
     private String nombre;
     private double puntuacion = 0.0;
+    ArrayList<Jugador> jugadores = new ArrayList<>();
 
-    public Jugador(String nombre ){
+    public Jugador(String nombre, double puntuacion ){
         this.nombre = nombre;
+        puntuacion = 0.0;
     }
 
 
@@ -21,6 +25,10 @@ public class Jugador {
     }
     public void setPuntuacion(double puntuacion) {
         this.puntuacion = puntuacion;
+    }
+
+    public void darAlta(Jugador jugador){
+        
     }
 
 }
