@@ -48,13 +48,22 @@ public class Jugador {
         }
     }
 
-    public void remove(Jugador player){
-        if (estaAlta( player.getName())) {
-            players.remove(player);
+    public static boolean remove(String name){
+        boolean bajado = false;
+        if (estaAlta(name)) {
+            for (int i = 0; i < players.size(); i++) {
+                Jugador a = players.get(i);
+                if (a.getName().equalsIgnoreCase(name)) {
+                    players.remove(i);
+                    bajado = true;
+                }bajado = false;
+            }
             System.out.println("Jugador dado de baja correctamente. ");
         }else{
             System.out.println("El jugador no está dado de alta. ");
+            bajado = false;
         }
+        return bajado;
     }
 
     public void show(){

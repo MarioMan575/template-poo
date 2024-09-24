@@ -33,6 +33,11 @@ public class App {
                 Jugador j = new Jugador(name, 0.0);
                 Jugador.create(j);
                 break;
+            case "remove":
+                String nombre = teclado.next();
+                if (Jugador.estaAlta(nombre)) {
+                    Jugador.remove(nombre);
+                }
         
             default:
                 break;
