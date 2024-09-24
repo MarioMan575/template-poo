@@ -38,6 +38,10 @@ public class App {
                 if (Jugador.estaAlta(nombre)) {
                     Jugador.remove(nombre);
                 }
+                break;
+            case "show":
+                System.out.println("Lista de jugadores: ");
+                Jugador.show();
         
             default:
                 break;

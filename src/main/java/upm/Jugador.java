@@ -66,7 +66,7 @@ public class Jugador {
         return bajado;
     }
 
-    public void show(){
+    public static void show(){
         for (int i = 0; i < players.size(); i++) {
             System.out.println(i+1+"."+players.get(i).getName());
         }
@@ -87,5 +87,9 @@ public class Jugador {
         }else{
             System.out.println("El jugador seleccionado no está dador de alta");
         }
+    }
+
+    public static void ranck(ArrayList<Jugador> jugadores){
+        
     }
 }
