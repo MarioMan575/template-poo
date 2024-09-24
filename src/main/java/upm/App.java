@@ -10,7 +10,11 @@ public class App {
         Jugador j3 = new Jugador("Kurt", 4.0);
         Jugador j4 = new Jugador ("Sofía", 3.8);
         Jugador j5 = new Jugador ("Robert", 3.8);
-        j1.darAlta(j5);
+        Jugador.create(j1);
+        Jugador.create(j2);
+        Jugador.create(j3);
+        Jugador.create(j4);
+        Jugador.create(j5);
         System.out.println("-- BIENVENIDO, ELIJA QUE ACCION QUIERE REALIZAR --");
         System.out.println("    + Create [player]");
         System.out.println("    + Remove [player]");
@@ -20,6 +24,16 @@ public class App {
         System.out.println("    + Show matchmake");
         System.out.println("    + Clear matchmake");
         System.out.println("    + Matchmake [player1] ; [player2]");
-
+        Scanner teclado = new Scanner(System.in);
+        String opcion = teclado.nextLine();
+        opcion.toLowerCase();
+        switch (opcion) {
+            case "create":
+                
+                break;
+        
+            default:
+                break;
+        }
     }
 }

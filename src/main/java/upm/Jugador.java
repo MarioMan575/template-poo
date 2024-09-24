@@ -3,73 +3,72 @@ package upm;
 
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Jugador {
 
-    private String nombre;
-    private double puntuacion = 0.0;
-    ArrayList<Jugador> jugadores = new ArrayList<>();
+    private String name;
+    private double score = 0.0;
+    static ArrayList<Jugador> players = new ArrayList<>();
 
-    public Jugador(String nombre, double puntuacion ){
-        this.nombre = nombre;
-        puntuacion = 0.0;
-    }
-
-
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public double getPuntuacion() {
-        return puntuacion;
-    }
-    public void setPuntuacion(double puntuacion) {
-        this.puntuacion = puntuacion;
+    public Jugador(String name, double score ){
+        this.name = name;
+        score = 0.0;
     }
 
-    public boolean estaAlta(String nombre){
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getScore() {
+        return score;
+    }
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+    public static boolean estaAlta(String name){
         boolean encontrado = false;
-        for (int i = 0; i < jugadores.size(); i++) {
-            if (jugadores.get(i).getNombre().equalsIgnoreCase(nombre)) {
+        for (int i = 0; i < players.size(); i++) {
+            if (players.get(i).getName().equalsIgnoreCase(name)) {
                 encontrado = true;
             }
         }
         return encontrado;
     }
 
-    public void darAlta(Jugador jugador){
-        if (estaAlta(jugador.getNombre())) {
+    public static void create(Jugador player){
+        if (estaAlta(player.getName())) {
             System.out.println("No se puede dar de alta, ya existe un jugador con este nombre. ");
         }else{
-            jugadores.add(jugador);
-            System.out.println("Jugador con nombre "+jugador.getNombre()+" dado de alta");
+            players.add(player);
+            System.out.println("Jugador con nombre "+player.getName()+" dado de alta");
         }
     }
 
-    public void bajaJugador(Jugador jugador){
-        if (estaAlta( jugador.getNombre())) {
-            jugadores.remove(jugador);
+    public void remove(Jugador player){
+        if (estaAlta( player.getName())) {
+            players.remove(player);
             System.out.println("Jugador dado de baja correctamente. ");
         }else{
             System.out.println("El jugador no está dado de alta. ");
         }
     }
 
-    public void mostrarJugadores(){
-        for (int i = 0; i < jugadores.size(); i++) {
-            System.out.println(i+1+"."+jugadores.get(i).getNombre());
+    public void show(){
+        for (int i = 0; i < players.size(); i++) {
+            System.out.println(i+1+"."+players.get(i).getName());
         }
     }
 
-    public void establecerPuntuaciones(double puntuacion, Jugador jugador ){
-        if (estaAlta(jugador.getNombre())) {
-            if (puntuacion>-999999.0) {
-                for (int i = 0; i < jugadores.size(); i++) {
-                    if (jugadores.get(i).getNombre().equals(jugador.getNombre())) {
-                        jugador.setPuntuacion(puntuacion);
+    public void establecerPuntuaciones(double score, Jugador player ){
+        if (estaAlta(player.getName())) {
+            if (score>-999999.0) {
+                for (int i = 0; i < players.size(); i++) {
+                    if (players.get(i).getName().equals(player.getName())) {
+                        player.setScore(score);
                         System.out.println("Puntuación establecida correctamente");
                     }
                 }
