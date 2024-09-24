@@ -14,7 +14,7 @@ public class App {
         System.out.println("-- BIENVENIDO, ELIJA QUE ACCION QUIERE REALIZAR --");
         System.out.println("    + Create [player]");
         System.out.println("    + Remove [player]");
-        System.out.println("    + Show");
+        System.out.println("    + Mostrar");
         System.out.println("    + Rank ");
         System.out.println("    + Score [player] ; [score]");
         System.out.println("    + Show matchmake");
