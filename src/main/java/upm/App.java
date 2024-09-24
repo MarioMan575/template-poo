@@ -25,11 +25,13 @@ public class App {
         System.out.println("    + Clear matchmake");
         System.out.println("    + Matchmake [player1] ; [player2]");
         Scanner teclado = new Scanner(System.in);
-        String opcion = teclado.nextLine();
+        String opcion = teclado.next();
         opcion.toLowerCase();
         switch (opcion) {
             case "create":
-                
+                String name = teclado.next();
+                Jugador j = new Jugador(name, 0.0);
+                Jugador.create(j);
                 break;
         
             default:
