@@ -3,6 +3,7 @@ package upm;
 
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Jugador {
 
@@ -60,6 +61,23 @@ public class Jugador {
     public void mostrarJugadores(){
         for (int i = 0; i < jugadores.size(); i++) {
             System.out.println(i+1+"."+jugadores.get(i).getNombre());
+        }
+    }
+
+    public void establecerPuntuaciones(double puntuacion, Jugador jugador ){
+        if (estaAlta(jugador.getNombre())) {
+            if (puntuacion>-999999.0) {
+                for (int i = 0; i < jugadores.size(); i++) {
+                    if (jugadores.get(i).getNombre().equals(jugador.getNombre())) {
+                        jugador.setPuntuacion(puntuacion);
+                        System.out.println("Puntuación establecida correctamente");
+                    }
+                }
+            }else{
+                System.out.println("La puntuación no puede ser inferior a -999999.0");
+            }
+        }else{
+            System.out.println("El jugador seleccionado no está dador de alta");
         }
     }
 }
