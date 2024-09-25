@@ -47,6 +47,13 @@ public class App {
                 System.out.println("Ranking de jugadores: ");
                 Jugador.ranck();
                 break;
+            case "score":
+                String nombreJ = teclado.next();
+                if (Jugador.estaAlta(nombreJ)) {
+                    for (int i = 0; i < Jugador.players.size(); i++) {
+                        
+                    }
+                }
             default:
                 break;
         }
