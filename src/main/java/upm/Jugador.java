@@ -3,6 +3,7 @@ package upm;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Jugador {
 
@@ -89,7 +90,7 @@ public class Jugador {
         }
     }
 
-    public static void ranck(ArrayList<Jugador> jugadores){
-        
+    public static void ranck(){
+            players.sort(Comparator.comparingDouble(Jugador::getScore).reversed());
     }
 }

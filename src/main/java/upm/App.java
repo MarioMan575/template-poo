@@ -42,7 +42,11 @@ public class App {
             case "show":
                 System.out.println("Lista de jugadores: ");
                 Jugador.show();
-        
+                break;
+            case "rank":
+                System.out.println("Ranking de jugadores: ");
+                Jugador.ranck();
+                break;
             default:
                 break;
         }
