@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
+        boolean salir = false;
         Jugador j1 = new Jugador("Luisa", 4.5);
         Jugador j2 = new Jugador("Manuel", 2.7);
         Jugador j3 = new Jugador("Kurt", 4.0);
@@ -20,55 +21,63 @@ public class App {
         System.out.println("    + Remove [player]");
         System.out.println("    + Mostrar");
         System.out.println("    + Rank ");
-        System.out.println("    + Score [player] ; [score]");
+        System.out.println("    + Score [player] [score]");
         System.out.println("    + Show matchmake");
         System.out.println("    + Clear matchmake");
-        System.out.println("    + Matchmake [player1] ; [player2]");
+        System.out.println("    + Matchmake [player1] [player2]");
+        System.out.println("    + Random matchmake");
+        System.out.println("    + Teclea 'salir' para salir");
         Scanner teclado = new Scanner(System.in);
-        String opcion = teclado.next();
-        opcion.toLowerCase();
-        switch (opcion) {
-            case "create":
-                String name = teclado.next();
-                Jugador j = new Jugador(name, 0.0);
-                Jugador.create(j);
-                break;
-            case "remove":
-                String nombre = teclado.next();
-                if (Jugador.estaAlta(nombre)) {
-                    Jugador.remove(nombre);
+        while (!salir) {
+            String opcion = teclado.next();
+            opcion.toLowerCase();
+            switch (opcion) {
+                case "create":
+                    String name = teclado.next();
+                    Jugador j = new Jugador(name, 0.0);
+                    Jugador.create(j);
+                    break;
+                case "remove":
+                    String nombre = teclado.next();
+                    if (Jugador.estaAlta(nombre)) {
+                        Jugador.remove(nombre);
+                    }else{
+                        System.out.println("El jugador no existe");
+                    }
+                    break;
+                case "show":
+                    System.out.println("Lista de jugadores: ");
+                    Jugador.show();
+                    break;
+                case "rank":
+                    System.out.println("Ranking de jugadores: ");
+                    Jugador.ranck();
+                    break;
+                case "score":
+                    String nombreJ = teclado.next();
+                    double score = teclado.nextDouble(); //revisar aquí como separar con split
+                    Jugador.score(score, nombreJ);
+                    break;
+                case "show matchmake":
+                    Emparejamiento.showMatchmake();
+                    break;
+                case "clear matchmake":
+                    Emparejamiento.clearMatchmake();
+                    break;
+                case "matchmake":
+                    String player1 = teclado.next();
+                    String player2 = teclado.next();
+                    Emparejamiento.matchmake(player1, player2);
+                    break;
+                case "random matchmake":
+                    Emparejamiento.randomMatchmake();
+                    break;
+                case "salir":
+                    salir = true;
+                    break;
+                default:
+                    break;
                 }
-                break;
-            case "show":
-                System.out.println("Lista de jugadores: ");
-                Jugador.show();
-                break;
-            case "rank":
-                System.out.println("Ranking de jugadores: ");
-                Jugador.ranck();
-                break;
-            case "score":
-                String nombreJ = teclado.next();
-                System.out.println("Introduzca la nueva puntuación: ");
-                double score = teclado.nextDouble();
-                Jugador.score(score, nombreJ);
-                break;
-            case "show matchmake":
-                Emparejamiento.showMatchmake();
-                break;
-            case "clear matchmake":
-                Emparejamiento.clearMatchmake();
-                break;
-            case "matchmake":
-                String player1 = teclado.next();
-                String player2 = teclado.next();
-                Emparejamiento.matchmake(player1, player2);
-                break;
-            case "random matchmake":
-                Emparejamiento.randomMatchmake();
-                break;
-            default:
-                break;
         }
     }
 }
