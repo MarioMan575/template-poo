@@ -49,11 +49,24 @@ public class App {
                 break;
             case "score":
                 String nombreJ = teclado.next();
-                if (Jugador.estaAlta(nombreJ)) {
-                    for (int i = 0; i < Jugador.players.size(); i++) {
-                        
-                    }
-                }
+                System.out.println("Introduzca la nueva puntuación: ");
+                double score = teclado.nextDouble();
+                Jugador.score(score, nombreJ);
+                break;
+            case "show matchmake":
+                Emparejamiento.showMatchmake();
+                break;
+            case "clear matchmake":
+                Emparejamiento.clearMatchmake();
+                break;
+            case "matchmake":
+                String player1 = teclado.next();
+                String player2 = teclado.next();
+                Emparejamiento.matchmake(player1, player2);
+                break;
+            case "random matchmake":
+                Emparejamiento.randomMatchmake();
+                break;
             default:
                 break;
         }

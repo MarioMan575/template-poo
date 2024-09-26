@@ -73,13 +73,14 @@ public class Jugador {
         }
     }
 
-    public void establecerPuntuaciones(double score, Jugador player ){
-        if (estaAlta(player.getName())) {
+    public static void score(double score, String player ){
+        if (estaAlta(player)) {
             if (score>-999999.0) {
                 for (int i = 0; i < players.size(); i++) {
-                    if (players.get(i).getName().equals(player.getName())) {
-                        player.setScore(score);
-                        System.out.println("Puntuación establecida correctamente");
+                    Jugador a = players.get(i);
+                    if (a.getName().equalsIgnoreCase(player)) {
+                        a.setScore(score);
+                        System.out.println("Puntuación actualizada correctamente. ");
                     }
                 }
             }else{
