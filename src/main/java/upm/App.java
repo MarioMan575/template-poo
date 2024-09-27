@@ -22,8 +22,8 @@ public class App {
         System.out.println("    + Show");
         System.out.println("    + Rank ");
         System.out.println("    + Score [player] [score]");
-        System.out.println("    + Show matchmake");
-        System.out.println("    + Clear matchmake");
+        System.out.println("    + Show_matchmake");
+        System.out.println("    + Clear_matchmake");
         System.out.println("    + Matchmake [player1] [player2]");
         System.out.println("    + Random matchmake");
         System.out.println("    + Teclea 'salir' para salir");
@@ -60,13 +60,14 @@ public class App {
                     double score = Double.parseDouble(partes[2]);
                     Jugador.score(score, nombreJ);
                     break;
-                case "show matchmake":
+                case "show_matchmake":
                     Emparejamiento.showMatchmake();
                     break;
-                case "clear matchmake":
+                case "clear_matchmake":
                     Emparejamiento.clearMatchmake();
                     break;
                 case "matchmake":
+                    Emparejamiento emparejamiento = new Emparejamiento();
                     String player1 = teclado.next();
                     String player2 = teclado.next();
                     Emparejamiento.matchmake(player1, player2);

@@ -12,12 +12,14 @@ public class Emparejamiento {
         if (Jugador.estaAlta(player1) && Jugador.estaAlta(player2)){
             String[] match = {player1, player2};
             matchmake.add(match);
+            System.out.println("Emparejamiento realizado");
         }else{
             System.out.println("No están dados de alta jugadores con esos nombres");
         }
     }
 
     public static void showMatchmake(){
+        System.out.println("Emparejamientos: ");
         for (int i = 0; i < matchmake.size(); i++) {
             System.out.println(matchmake.get(i)[0] + " vs " + matchmake.get(i)[1]);
         }
@@ -25,6 +27,7 @@ public class Emparejamiento {
 
     public static void clearMatchmake(){
         matchmake.clear();
+        System.out.println("Emparejamientos eliminados");
     }
 
     public static void randomMatchmake(){
