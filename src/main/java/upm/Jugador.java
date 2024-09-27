@@ -87,7 +87,7 @@ public class Jugador {
                 System.out.println("La puntuación no puede ser inferior a -999999.0");
             }
         }else{
-            System.out.println("El jugador seleccionado no está dador de alta");
+            System.out.println("El jugador seleccionado no está dado de alta");
         }
     }
 

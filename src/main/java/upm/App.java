@@ -72,7 +72,8 @@ public class App {
                     String player2 = teclado.next();
                     Emparejamiento.matchmake(player1, player2);
                     break;
-                case "random matchmake":
+                case "random_matchmake":
+                Emparejamiento emparejamiento2 = new Emparejamiento();
                     Emparejamiento.randomMatchmake();
                     break;
                 case "salir":
