@@ -30,8 +30,7 @@ public class App {
         Scanner teclado = new Scanner(System.in);
         while (!salir) {
             String opcion = teclado.next();
-            opcion.toLowerCase();
-            switch (opcion) {
+            switch (opcion.toLowerCase()) {
                 case "create":
                     String name = teclado.next();
                     Jugador j = new Jugador(name, 0.0);
