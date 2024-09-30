@@ -34,10 +34,11 @@ public class Emparejamiento {
         List<Jugador> players = new ArrayList<>(Jugador.players);
         if (players.size() % 2 == 0) {
             java.util.Collections.shuffle(players);
-            for (int i = 0; i < players.size(); i += 2) {
+            for (int i = 0; i < players.size(); i+=2 ) {
             String[] match = {players.get(i).getName(), players.get(i + 1).getName()};
             matchmake.add(match);
             }
+            System.out.println("Matchmake aleatorio realizado");
         } else {
             System.out.println("No se puede emparejar, número de jugadores impar");
         }
