@@ -13,7 +13,7 @@ public class Jugador {
 
     public Jugador(String name, double score ){
         this.name = name;
-        score = 0.0;
+        this.score = score;
     }
 
 
