@@ -86,7 +86,7 @@
                     <mxGeometry y="210" width="170" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="67" value="Vertical Container" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="460" y="290" width="330" height="380" as="geometry"/>
+                    <mxGeometry x="460" y="310" width="350" height="590" as="geometry"/>
                 </mxCell>
                 <mxCell id="68" value="+ main(args: String[]): void" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
                     <mxGeometry x="10" y="28" width="160" height="30" as="geometry"/>
@@ -94,12 +94,64 @@
                 <mxCell id="69" value="" style="endArrow=none;html=1;shape=link;" edge="1" parent="67">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint y="60" as="sourcePoint"/>
-                        <mxPoint x="330" y="60" as="targetPoint"/>
+                        <mxPoint x="350" y="60" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="70" value="Text" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="475" y="365" width="50" height="30" as="geometry"/>
+                <mxCell id="70" value="+ Jugador j1: Jugador" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="70" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="+ Jugador j2: Jugador" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="100" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="+ Jugador j3: Jugador&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="130" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="+ Jugador j4: Jugador&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="160" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="+ Jugador j5: Jugador" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="190" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="+ Scanner teclado: Scanner" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="215" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="" style="endArrow=none;html=1;shape=link;" edge="1" parent="67">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint y="245" as="sourcePoint"/>
+                        <mxPoint x="350" y="245" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="79" value="+ Create (Jugador.create(jugador: Jugador)) " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="260" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="+ Remove (Jugador.remove(name: String))" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="290" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="+ Show (Jugador.show())  " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="320" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="+ Rank (Jugador.ranck())   " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="350" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="+ Score (Jugador.score(score: double, nombre: String))" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="10" y="380" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="+ ShowMatchmake (Emparejamiento.showMatchmake())" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="5" y="410" width="330" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="+ ClearMatchmake (Emparejamiento.clearMatchmake())" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="5" y="440" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="+ Matchmake (Emparejamiento.matchmake(player1: String, &lt;br&gt;player2: String))" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="5" y="470" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="+ RandomMatchmake (Emparejamiento.randomMatchmake())" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="5" y="505" width="350" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="+ Salir (Terminates loop)  " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="67">
+                    <mxGeometry x="5" y="535" width="150" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
