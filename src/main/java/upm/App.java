@@ -21,10 +21,10 @@ public class App {
         System.out.println("    + Remove [player]");
         System.out.println("    + Show");
         System.out.println("    + Rank ");
-        System.out.println("    + Score [player] [score]");
+        System.out.println("    + Score [player];[score]");
         System.out.println("    + Show_matchmake");
         System.out.println("    + Clear_matchmake");
-        System.out.println("    + Matchmake [player1] [player2]");
+        System.out.println("    + Matchmake [player1];[player2]");
         System.out.println("    + Random matchmake");
         System.out.println("    + Teclea 'salir' para salir");
         Scanner teclado = new Scanner(System.in);
