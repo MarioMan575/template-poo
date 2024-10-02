@@ -54,9 +54,9 @@ public class App {
                     break;
                 case "score":
                     String linea = teclado.nextLine();
-                    String [] partes = linea.split(" ");
-                    String nombreJ = partes[1];
-                    double score = Double.parseDouble(partes[2]);
+                    String[] partes = linea.split(" ")[1].split(";");
+                    String nombreJ = partes[0];
+                    double score = Double.parseDouble(partes[1]);
                     Jugador.score(score, nombreJ);
                     break;
                 case "show_matchmake":
