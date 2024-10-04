@@ -91,7 +91,7 @@ public class Jugador {
         }
     }
 
-    public static void ranck(){
+    public static void rank(){
             players.sort(Comparator.comparingDouble(Jugador::getScore).reversed());
             for (int i = 0; i < players.size(); i++) {
                 System.out.println(i+1+"."+players.get(i).getName()+" "+players.get(i).getScore());

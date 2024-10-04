@@ -50,7 +50,7 @@ public class App {
                     break;
                 case "rank":
                     System.out.println("Ranking de jugadores: ");
-                    Jugador.ranck();
+                    Jugador.rank();
                     break;
                 case "score":
                     //String linea = teclado.nextLine();
