@@ -53,11 +53,27 @@ public class App {
                     Jugador.ranck();
                     break;
                 case "score":
-                    String linea = teclado.nextLine();
-                    String[] partes = linea.split(" ")[1].split(";");
-                    String nombreJ = partes[0];
-                    double score = Double.parseDouble(partes[1]);
-                    Jugador.score(score, nombreJ);
+                    //String linea = teclado.nextLine();
+                    //String[] partes = linea.split(" ")[1].split(";");
+                    //String nombreJ = partes[0];
+                    //double score = Double.parseDouble(partes[1]);
+                    //Jugador.score(score, nombreJ);
+                    try{
+                        String nombres1 = teclado.next();
+                        String nombre3 = nombres1.split(";")[0];
+                        try {
+                            double score = Double.parseDouble(nombres1.split(";")[1]);
+                            if (Jugador.estaAlta(nombre3)) {
+                                Jugador.score(score, nombre3);
+                            }else{
+                                System.out.println("El jugador no existe");
+                            }
+                        }catch (NumberFormatException e){
+                            System.out.println("Error en el formato de la puntuación");
+                        }
+                    }catch (ArrayIndexOutOfBoundsException e){
+                        System.out.println("Error en el formato de la entrada");
+                    }
                     break;
                 case "show_matchmake":
                     Emparejamiento.showMatchmake();
