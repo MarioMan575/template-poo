@@ -1,8 +1,8 @@
 /**
- Álvaro Fernández Abad (bu0290)
- Mario Manzanares Gala (bu0377)
- Sergio Marqués Andrés (bu0016)
- Sergio Rodríguez Garrida (bu0041)
+ * Álvaro Fernández Abad (bu0290)
+ * Mario Manzanares Gala (bu0377)
+ * Sergio Marqués Andrés (bu0016)
+ * Sergio Rodríguez Garrida (bu0041)
  */
 
 package upm;
