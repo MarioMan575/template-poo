@@ -29,6 +29,7 @@ public class App {
         System.out.println("    + Teclea 'salir' para salir");
         Scanner teclado = new Scanner(System.in);
         while (!salir) {
+            System.out.print("> ");
             String opcion = teclado.next();
             switch (opcion.toLowerCase()) {
                 case "create":
@@ -83,9 +84,14 @@ public class App {
                     break;
                 case "matchmake":
                     Emparejamiento emparejamiento = new Emparejamiento();
-                    String player1 = teclado.next();
-                    String player2 = teclado.next();
-                    Emparejamiento.matchmake(player1, player2);
+                    try {
+                        String nombres = teclado.next();
+                        String player1 = nombres.split(";")[0];
+                        String player2 = nombres.split(";")[1];
+                        Emparejamiento.matchmake(player1, player2);
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        System.out.println("Error en el formato de la entrada, debe ser [player1];[player2]");
+                    }
                     break;
                 case "random_matchmake":
                 Emparejamiento emparejamiento2 = new Emparejamiento();
@@ -96,6 +102,7 @@ public class App {
                     salir = true;
                     break;
                 default:
+                    System.out.println("Comando no reconocido");
                     break;
                 }
         }
