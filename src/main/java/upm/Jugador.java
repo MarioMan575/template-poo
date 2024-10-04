@@ -1,6 +1,11 @@
+/**
+ Álvaro Fernández Abad (bu0290)
+ Mario Manzanares Gala (bu0377)
+ Sergio Marqués Andrés (bu0016)
+ Sergio Rodríguez Garrida (bu0041)
+ */
+
 package upm;
-
-
 
 import java.util.ArrayList;
 import java.util.Comparator;
