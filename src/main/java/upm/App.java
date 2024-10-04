@@ -17,15 +17,15 @@ public class App {
         Jugador.create(j4);
         Jugador.create(j5);
         System.out.println("-- BIENVENIDO, ELIJA QUE ACCION QUIERE REALIZAR --");
-        System.out.println("    + Create [player]");
-        System.out.println("    + Remove [player]");
-        System.out.println("    + Show");
-        System.out.println("    + Rank ");
-        System.out.println("    + Score [player];[score]");
-        System.out.println("    + Show_matchmake");
-        System.out.println("    + Clear_matchmake");
-        System.out.println("    + Matchmake [player1];[player2]");
-        System.out.println("    + Random matchmake");
+        System.out.println("    + create [player]");
+        System.out.println("    + remove [player]");
+        System.out.println("    + show");
+        System.out.println("    + rank");
+        System.out.println("    + score [player];[score]");
+        System.out.println("    + show_matchmake");
+        System.out.println("    + clear_matchmake");
+        System.out.println("    + matchmake [player1];[player2]");
+        System.out.println("    + random_matchmake");
         System.out.println("    + Teclea 'salir' para salir");
         Scanner teclado = new Scanner(System.in);
         while (!salir) {
