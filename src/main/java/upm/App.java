@@ -1,10 +1,3 @@
-/**
- * Álvaro Fernández Abad (bu0290)
- * Mario Manzanares Gala (bu0377)
- * Sergio Marqués Andrés (bu0016)
- * Sergio Rodríguez Garrida (bu0041)
- */
-
 package upm;
 
 import java.util.Scanner;
@@ -24,19 +17,19 @@ public class App {
         Jugador.create(j4);
         Jugador.create(j5);
         System.out.println("-- BIENVENIDO, ELIJA QUE ACCION QUIERE REALIZAR --");
-        System.out.println("    + create [player]");
-        System.out.println("    + remove [player]");
-        System.out.println("    + show");
-        System.out.println("    + rank");
-        System.out.println("    + score [player];[score]");
-        System.out.println("    + show_matchmake");
-        System.out.println("    + clear_matchmake");
-        System.out.println("    + matchmake [player1];[player2]");
-        System.out.println("    + random_matchmake");
+        System.out.println("    + Create [player]");
+        System.out.println("    + Remove [player]");
+        System.out.println("    + Show");
+        System.out.println("    + Rank ");
+        System.out.println("    + Score [player];[score]");
+        System.out.println("    + Show_matchmake");
+        System.out.println("    + Clear_matchmake");
+        System.out.println("    + Matchmake [player1];[player2]");
+        System.out.println("    + Random matchmake");
         System.out.println("    + Teclea 'salir' para salir");
         Scanner teclado = new Scanner(System.in);
         while (!salir) {
-            System.out.print("> ");
+            System.out.println(">");
             String opcion = teclado.next();
             switch (opcion.toLowerCase()) {
                 case "create":
@@ -61,11 +54,6 @@ public class App {
                     Jugador.rank();
                     break;
                 case "score":
-                    //String linea = teclado.nextLine();
-                    //String[] partes = linea.split(" ")[1].split(";");
-                    //String nombreJ = partes[0];
-                    //double score = Double.parseDouble(partes[1]);
-                    //Jugador.score(score, nombreJ);
                     try{
                         String nombres1 = teclado.next();
                         String nombre3 = nombres1.split(";")[0];
@@ -90,18 +78,21 @@ public class App {
                     Emparejamiento.clearMatchmake();
                     break;
                 case "matchmake":
-                    Emparejamiento emparejamiento = new Emparejamiento();
-                    try {
-                        String nombres = teclado.next();
-                        String player1 = nombres.split(";")[0];
-                        String player2 = nombres.split(";")[1];
-                        Emparejamiento.matchmake(player1, player2);
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        System.out.println("Error en el formato de la entrada, debe ser [player1];[player2]");
+                    try{
+                        String nombres2 = teclado.next();
+                        String nombre1 = nombres2.split(";")[0];
+                        String nombre2 = nombres2.split(";")[1];
+                        if (Jugador.estaAlta(nombre1) && Jugador.estaAlta(nombre2)){
+                            Emparejamiento.matchmake(nombre1, nombre2);
+                        }else{
+                            System.out.println("No están dados de alta jugadores con esos nombres");
+                        }
+                    }catch (ArrayIndexOutOfBoundsException e){
+                        System.out.println("Error en el formato de la entrada");
                     }
                     break;
                 case "random_matchmake":
-                Emparejamiento emparejamiento2 = new Emparejamiento();
+                    Emparejamiento emparejamiento2 = new Emparejamiento();
                     Emparejamiento.randomMatchmake();
                     break;
                 case "salir":
@@ -109,7 +100,7 @@ public class App {
                     salir = true;
                     break;
                 default:
-                    System.out.println("Comando no reconocido");
+                System.out.println("Comando no reconocido");
                     break;
                 }
         }
