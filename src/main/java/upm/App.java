@@ -29,7 +29,7 @@ public class App {
         System.out.println("    + Teclea 'salir' para salir");
         Scanner teclado = new Scanner(System.in);
         while (!salir) {
-            System.out.println(">");
+            System.out.print(">");
             String opcion = teclado.next();
             switch (opcion.toLowerCase()) {
                 case "create":
@@ -79,6 +79,7 @@ public class App {
                     break;
                 case "matchmake":
                     try{
+                        Emparejamiento emparejamiento = new Emparejamiento();
                         String nombres2 = teclado.next();
                         String nombre1 = nombres2.split(";")[0];
                         String nombre2 = nombres2.split(";")[1];
