@@ -29,7 +29,7 @@ public class App {
         System.out.println("    + Teclea 'salir' para salir");
         Scanner teclado = new Scanner(System.in);
         while (!salir) {
-            System.out.print(">");
+            System.out.print("> ");
             String opcion = teclado.next();
             switch (opcion.toLowerCase()) {
                 case "create":
